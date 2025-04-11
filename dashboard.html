@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car mAIstro - Tableau de bord</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'deep-blue': '#0A192F',
+                        'card-blue': '#1E2A45',
+                        'electric-blue': '#60A5FA',
+                        'light-purple': '#8B5CF6',
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-deep-blue font-inter text-gray-100">
+    <div class="flex h-screen">
+        <!-- Sidebar Navigation -->
+        <nav class="w-64 bg-deep-blue border-r border-gray-700 flex flex-col">
+            <!-- Logo -->
+            <div class="p-6 border-b border-gray-700">
+                <a href="dashboard.html" class="text-2xl font-bold text-white">Car<span class="text-electric-blue">mAIstro</span></a>
+            </div>
+
+            <!-- Navigation Links -->
+            <div class="flex-1 overflow-y-auto py-4 space-y-1">
+                <a href="dashboard.html" class="flex items-center px-6 py-3 text-white bg-gray-800 bg-opacity-50 rounded-lg mx-2">
+                    <i class="fas fa-chart-line w-5"></i>
+                    <span class="ml-3">Tableau de bord</span>
+                </a>
+
+                <!-- Vente -->
+                <div class="nav-item relative px-2">
+                    <button class="flex items-center w-full px-6 py-3 text-gray-300 hover:bg-gray-800 hover:bg-opacity-50 rounded-lg">
+                        <i class="fas fa-dollar-sign w-5"></i>
+                        <span class="ml-3">Vente</span>
+                        <i class="fas fa-chevron-down ml-auto"></i>
+                    </button>
+                    <div class="nav-dropdown absolute left-0 w-full bg-card-blue border border-gray-700 rounded-lg py-2 mt-1 shadow-lg">
+                        <a href="walk-in.html" class="block px-6 py-2 text-sm text-gray-300 hover:bg-gray-700">Walk-in</a>
+                        <a href="phone-up.html" class="block px-6 py-2 text-sm text-gray-300 hover:bg-gray-700">Phone up</a>
+                        <a href="renouvellement.html" class="block px-6 py-2 text-sm text-gray-300 hover:bg-gray-700">Renouvellement</a>
+                        <a href="utext.html" class="block px-6 py-2 text-sm text-gray-300 hover:bg-gray-700">Utext</a>
+                    </div>
+                </div>
+
+                <!-- Outils -->
+                <div class="nav-item relative px-2">
+                    <button class="flex items-center w-full px-6 py-3 text-gray-300 hover:bg-gray-800 hover:bg-opacity-50 rounded-lg">
+                        <i class="fas fa-tools w-5"></i>
+                        <span class="ml-3">Outils</span>
+                        <i class="fas fa-chevron-down ml-auto"></i>
+                    </button>
+                    <div class="nav-dropdown absolute left-0 w-full bg-card-blue border border-gray-700 rounded-lg py-2 mt-1 shadow-lg">
+                        <a href="#" class="block px-6 py-2 text-sm text-gray-300 hover:bg-gray-700">Tour de rôle</a>
+                        <a href="#" class="block px-6 py-2 text-sm text-gray-300 hover:bg-gray-700">Horaire</a>
+                        <a href="#" class="block px-6 py-2 text-sm text-gray-300 hover:bg-gray-700">Calendrier</a>
+                        <a href="#" class="block px-6 py-2 text-sm text-gray-300 hover:bg-gray-700">Inventaire</a>
+                    </div>
+                </div>
+
+                <!-- Analyse CRM -->
+                <div class="nav-item relative px-2">
+                    <button class="flex items-center w-full px-6 py-3 text-gray-300 hover:bg-gray-800 hover:bg-opacity-50 rounded-lg">
+                        <i class="fas fa-brain w-5"></i>
+                        <span class="ml-3">Analyse CRM</span>
+                        <i class="fas fa-chevron-down ml-auto"></i>
+                    </button>
+                    <div class="nav-dropdown absolute left-0 w-full bg-card-blue border border-gray-700 rounded-lg py-2 mt-1 shadow-lg">
+                        <a href="#" class="block px-6 py-2 text-sm text-gray-300 hover:bg-gray-700">Stats</a>
+                        <a href="rapport-ia.html" class="block px-6 py-2 text-sm text-gray-300 hover:bg-gray-700">Rapport IA</a>
+                        <a href="#" class="block px-6 py-2 text-sm text-gray-300 hover:bg-gray-700">Exa Analyse</a>
+                    </div>
+                </div>
+
+                <a href="#" class="flex items-center px-6 py-3 text-gray-300 hover:bg-gray-800 hover:bg-opacity-50 rounded-lg mx-2">
+                    <i class="fas fa-chart-bar w-5"></i>
+                    <span class="ml-3">Tableau des ventes</span>
+                </a>
+
+                <a href="#" class="flex items-center px-6 py-3 text-gray-300 hover:bg-gray-800 hover:bg-opacity-50 rounded-lg mx-2">
+                    <i class="fas fa-chart-pie w-5"></i>
+                    <span class="ml-3">Stats</span>
+                </a>
+            </div>
+
+            <!-- Settings -->
+            <div class="border-t border-gray-700 p-4">
+                <div class="nav-item relative">
+                    <button class="flex items-center w-full px-6 py-3 text-gray-300 hover:bg-gray-800 hover:bg-opacity-50 rounded-lg">
+                        <i class="fas fa-cog w-5"></i>
+                        <span class="ml-3">Paramètres</span>
+                        <i class="fas fa-chevron-down ml-auto"></i>
+                    </button>
+                    <div class="nav-dropdown absolute left-0 w-full bg-card-blue border border-gray-700 rounded-lg py-2 mt-1 shadow-lg">
+                        <a href="profil.html" class="block px-6 py-2 text-sm text-gray-300 hover:bg-gray-700">
+                            <i class="fas fa-user w-5"></i>
+                            <span class="ml-2">Profil</span>
+                        </a>
+                        <a href="direction.html" class="block px-6 py-2 text-sm text-gray-300 hover:bg-gray-700">
+                            <i class="fas fa-building w-5"></i>
+                            <span class="ml-2">Direction</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="flex-1 overflow-x-hidden overflow-y-auto bg-deep-blue">
+            <!-- Top Bar -->
+            <div class="bg-deep-blue border-b border-gray-700 p-4 flex items-center justify-between sticky top-0 z-10">
+                <h2 class="text-xl text-white font-semibold">Tableau de bord</h2>
+                
+                <!-- Search and Filter -->
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <input type="text" placeholder="Rechercher client ou véhicule..." 
+                               class="bg-card-blue text-white rounded-lg px-4 py-2 border border-gray-700 w-64">
+                        <i class="fas fa-search absolute right-3 top-3 text-gray-400"></i>
+                    </div>
+                    <select class="bg-card-blue text-white rounded-lg px-4 py-2 border border-gray-700">
+                        <option>Aujourd'hui</option>
+                        <option>Ce mois-ci</option>
+                        <option>30 jours</option>
+                        <option>60 jours</option>
+                        <option>90 jours</option>
+                    </select>
+                    <button class="text-gray-300 hover:text-white relative">
+                        <i class="fas fa-bell text-xl"></i>
+                        <span class="absolute -top-1 -right-1 bg-red-500 rounded-full w-4 h-4 text-xs flex items-center justify-center">3</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Dashboard Content -->
+            <div class="p-6 space-y-8">
+                <!-- Summary Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Prospect -->
+                    <div class="kpi-card bg-card-blue rounded-xl p-6 border border-gray-700">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="text-gray-400">
+                                <i class="fas fa-users text-purple-500"></i>
+                                <span class="ml-2">Prospect</span>
+                            </div>
+                        </div>
+                        <div class="text-3xl font-bold text-white">24</div>
+                    </div>
+
+                    <!-- En Attente -->
+                    <div class="kpi-card bg-card-blue rounded-xl p-6 border border-gray-700">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="text-gray-400">
+                                <i class="fas fa-clock text-yellow-500"></i>
+                                <span class="ml-2">En Attente</span>
+                            </div>
+                        </div>
+                        <div class="text-3xl font-bold text-white">8</div>
+                    </div>
+
+                    <!-- Complété -->
+                    <div class="kpi-card bg-card-blue rounded-xl p-6 border border-gray-700">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="text-gray-400">
+                                <i class="fas fa-check-circle text-blue-500"></i>
+                                <span class="ml-2">Complété</span>
+                            </div>
+                        </div>
+                        <div class="text-3xl font-bold text-white">15</div>
+                    </div>
+
+                    <!-- Vendu -->
+                    <div class="kpi-card bg-card-blue rounded-xl p-6 border border-gray-700">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="text-gray-400">
+                                <i class="fas fa-check-double text-green-500"></i>
+                                <span class="ml-2">Vendu</span>
+                            </div>
+                        </div>
+                        <div class="text-3xl font-bold text-white">12</div>
+                    </div>
+                </div>
+
+                <!-- Add Client Button -->
+                <div class="flex justify-end">
+                    <button class="bg-electric-blue hover:bg-blue-600 text-white px-6 py-3 rounded-lg flex items-center space-x-2">
+                        <i class="fas fa-plus"></i>
+                        <span>Ajouter un client</span>
+                    </button>
+                </div>
+
+                <!-- Active Tasks and Vehicles -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <!-- Active Tasks -->
+                    <div class="bg-card-blue rounded-xl p-6 border border-gray-700">
+                        <h3 class="text-xl font-semibold mb-6">Tâches actives</h3>
+                        <div class="overflow-x-auto">
+                            <table class="w-full">
+                                <thead>
+                                    <tr class="text-left text-gray-400">
+                                        <th class="pb-4">Tâche</th>
+                                        <th class="pb-4">Client</th>
+                                        <th class="pb-4">Date prévue</th>
+                                        <th class="pb-4">Priorité</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-gray-300">
+                                    <tr class="border-b border-gray-700">
+                                        <td class="py-4">Appel de suivi</td>
+                                        <td>Marie Tremblay</td>
+                                        <td>2024-03-25</td>
+                                        <td><span class="status-badge bg-red-500 bg-opacity-20 text-red-400">Haute</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-4">Essai routier</td>
+                                        <td>Sophie Martin</td>
+                                        <td>2024-03-26</td>
+                                        <td><span class="status-badge bg-yellow-500 bg-opacity-20 text-yellow-400">Normale</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Vehicles in Preparation -->
+                    <div class="bg-card-blue rounded-xl p-6 border border-gray-700">
+                        <h3 class="text-xl font-semibold mb-6">Véhicules en préparation</h3>
+                        <div class="overflow-x-auto">
+                            <table class="w-full">
+                                <thead>
+                                    <tr class="text-left text-gray-400">
+                                        <th class="pb-4">Stock</th>
+                                        <th class="pb-4">Client</th>
+                                        <th class="pb-4">Véhicule</th>
+                                        <th class="pb-4">Date livraison</th>
+                                        <th class="pb-4">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-gray-300">
+                                    <tr class="border-b border-gray-700">
+                                        <td class="py-4">ST2024-156</td>
+                                        <td>Jeep</td>
+                                        <td>Grand Cherokee</td>
+                                        <td>2024-03-25</td>
+                                        <td>
+                                            <label class="inline-flex items-center">
+                                                <input type="checkbox" class="form-checkbox text-electric-blue h-5 w-5 rounded">
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-4">ST2024-157</td>
+                                        <td>RAM</td>
+                                        <td>1500</td>
+                                        <td>2024-03-26</td>
+                                        <td>
+                                            <label class="inline-flex items-center">
+                                                <input type="checkbox" class="form-checkbox text-electric-blue h-5 w-5 rounded">
+                                            </label>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tour de rôle Buttons -->
+                <div class="flex justify-center space-x-4">
+                    <button class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg flex items-center space-x-2">
+                        <i class="fas fa-car"></i>
+                        <span>Tour de rôle - Neuf</span>
+                    </button>
+                    <button class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg flex items-center space-x-2">
+                        <i class="fas fa-car-alt"></i>
+                        <span>Tour de rôle - Usagé</span>
+                    </button>
+                    <button class="bg-gray-500 hover:bg-gray-600 text-white px-6 py-3 rounded-lg flex items-center space-x-2">
+                        <i class="fas fa-pause"></i>
+                        <span>Pause</span>
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- AI Assistant Button -->
+    <button class="ai-assistant-btn fixed bottom-6 right-6 bg-light-purple hover:bg-purple-600 text-white rounded-full p-4 shadow-lg flex items-center justify-center">
+        <i class="fas fa-robot text-2xl"></i>
+    </button>
+</body>
+</html>
