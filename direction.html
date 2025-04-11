@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car mAIstro - Direction</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="direction.js" defer></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'deep-blue': '#0A192F',
+                        'card-blue': '#1E2A45',
+                        'electric-blue': '#60A5FA',
+                        'light-purple': '#8B5CF6',
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-deep-blue font-inter text-gray-100">
+    <div class="flex h-screen">
+        <!-- Sidebar Navigation -->
+        <nav class="w-64 bg-deep-blue border-r border-gray-700 flex flex-col">
+            <!-- Logo -->
+            <div class="p-6 border-b border-gray-700">
+                <a href="dashboard.html" class="text-2xl font-bold text-white">Car<span class="text-electric-blue">mAIstro</span></a>
+            </div>
+
+            <!-- Navigation Links -->
+            <div class="flex-1 overflow-y-auto py-4 space-y-1">
+                <a href="dashboard.html" class="flex items-center px-6 py-3 text-gray-300 hover:bg-gray-800 hover:bg-opacity-50 rounded-lg mx-2">
+                    <i class="fas fa-chart-line w-5"></i>
+                    <span class="ml-3">Tableau de bord</span>
+                </a>
+
+                <!-- Vente -->
+                <div class="nav-item relative px-2">
+                    <button class="flex items-center w-full px-6 py-3 text-gray-300 hover:bg-gray-800 hover:bg-opacity-50 rounded-lg">
+                        <i class="fas fa-dollar-sign w-5"></i>
+                        <span class="ml-3">Vente</span>
+                        <i class="fas fa-chevron-down ml-auto"></i>
+                    </button>
+                    <div class="nav-dropdown absolute left-0 w-full bg-card-blue border border-gray-700 rounded-lg py-2 mt-1 shadow-lg">
+                        <a href="walk-in.html" class="block px-6 py-2 text-sm text-gray-300 hover:bg-gray-700">Walk-in</a>
+                        <a href="phone-up.html" class="block px-6 py-2 text-sm text-gray-300 hover:bg-gray-700">Phone up</a>
+                        <a href="renouvellement.html" class="block px-6 py-2 text-sm text-gray-300 hover:bg-gray-700">Renouvellement</a>
+                        <a href="utext.html" class="block px-6 py-2 text-sm text-gray-300 hover:bg-gray-700">Utext</a>
+                    </div>
+                </div>
+
+                <!-- Outils -->
+                <div class="nav-item relative px-2">
+                    <button class="flex items-center w-full px-6 py-3 text-gray-300 hover:bg-gray-800 hover:bg-opacity-50 rounded-lg">
+                        <i class="fas fa-tools w-5"></i>
+                        <span class="ml-3">Outils</span>
+                        <i class="fas fa-chevron-down ml-auto"></i>
+                    </button>
+                    <div class="nav-dropdown absolute left-0 w-full bg-card-blue border border-gray-700 rounded-lg py-2 mt-1 shadow-lg">
+                        <a href="tour-de-role.html" class="block px-6 py-2 text-sm text-gray-300 hover:bg-gray-700">Tour de rôle</a>
+                        <a href="horaire.html" class="block px-6 py-2 text-sm text-gray-300 hover:bg-gray-700">Horaire</a>
+                        <a href="inventaire.html" class="block px-6 py-2 text-sm text-gray-300 hover:bg-gray-700">Inventaire</a>
+                    </div>
+                </div>
+
+                <!-- Analyse CRM -->
+                <div class="nav-item relative px-2">
+                    <button class="flex items-center w-full px-6 py-3 text-gray-300 hover:bg-gray-800 hover:bg-opacity-50 rounded-lg">
+                        <i class="fas fa-brain w-5"></i>
+                        <span class="ml-3">Analyse CRM</span>
+                        <i class="fas fa-chevron-down ml-auto"></i>
+                    </button>
+                    <div class="nav-dropdown absolute left-0 w-full bg-card-blue border border-gray-700 rounded-lg py-2 mt-1 shadow-lg">
+                        <a href="rapport-ia.html" class="block px-6 py-2 text-sm text-gray-300 hover:bg-gray-700">Rapport IA</a>
+                        <a href="exa-analyse.html" class="block px-6 py-2 text-sm text-gray-300 hover:bg-gray-700">Exa Analyse</a>
+                    </div>
+                </div>
+
+                <a href="tableau-ventes.html" class="flex items-center px-6 py-3 text-gray-300 hover:bg-gray-800 hover:bg-opacity-50 rounded-lg mx-2">
+                    <i class="fas fa-chart-bar w-5"></i>
+                    <span class="ml-3">Tableau des ventes</span>
+                </a>
+            </div>
+
+            <!-- Settings -->
+            <div class="border-t border-gray-700 p-4">
+                <div class="nav-item relative">
+                    <button class="flex items-center w-full px-6 py-3 text-white bg-gray-800 bg-opacity-50 rounded-lg">
+                        <i class="fas fa-cog w-5"></i>
+                        <span class="ml-3">Paramètres</span>
+                        <i class="fas fa-chevron-down ml-auto"></i>
+                    </button>
+                    <div class="nav-dropdown absolute left-0 w-full bg-card-blue border border-gray-700 rounded-lg py-2 mt-1 shadow-lg">
+                        <a href="profil.html" class="block px-6 py-2 text-sm text-gray-300 hover:bg-gray-700">
+                            <i class="fas fa-user w-5"></i>
+                            <span class="ml-2">Profil</span>
+                        </a>
+                        <a href="direction.html" class="block px-6 py-2 text-sm text-white bg-gray-700">
+                            <i class="fas fa-building w-5"></i>
+                            <span class="ml-2">Direction</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="flex-1 overflow-x-hidden overflow-y-auto bg-deep-blue">
+            <!-- Top Bar -->
+            <div class="bg-deep-blue border-b border-gray-700 p-4 flex items-center justify-between sticky top-0 z-10">
+                <h2 class="text-xl text-white font-semibold">Direction</h2>
+                
+                <!-- Notifications -->
+                <div class="flex items-center space-x-4">
+                    <button class="text-gray-300 hover:text-white relative">
+                        <i class="fas fa-bell text-xl"></i>
+                        <span class="absolute -top-1 -right-1 bg-red-500 rounded-full w-4 h-4 text-xs flex items-center justify-center">2</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Direction Content -->
+            <div class="p-6">
+                <!-- Navigation Tabs -->
+                <div class="flex space-x-4 border-b border-gray-700 mb-6">
+                    <button data-tab="system" class="tab-btn active px-4 py-2 text-white bg-card-blue rounded-t-lg border-b-2 border-electric-blue">
+                        Configuration système
+                    </button>
+                    <button data-tab="users" class="tab-btn px-4 py-2 text-gray-400 hover:text-white">
+                        Gestion utilisateurs
+                    </button>
+                    <button data-tab="ai" class="tab-btn px-4 py-2 text-gray-400 hover:text-white">
+                        Configuration IA
+                    </button>
+                    <button data-tab="logs" class="tab-btn px-4 py-2 text-gray-400 hover:text-white">
+                        Journaux système
+                    </button>
+                    <button data-tab="import" class="tab-btn px-4 py-2 text-gray-400 hover:text-white">
+                        Import/Export
+                    </button>
+                </div>
+
+                <!-- Tab Content -->
+                <div id="tabContent">
+                    <!-- System Configuration Section -->
+                    <div data-section="system" class="space-y-6">
+                    <div class="bg-card-blue rounded-xl p-6 border border-gray-700">
+                        <h3 class="text-xl font-semibold mb-6">Configuration générale</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h4 class="font-semibold">Mode sombre</h4>
+                                    <p class="text-sm text-gray-400">Activer le thème sombre</p>
+                                </div>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" class="sr-only peer" checked>
+                                    <div class="w-11 h-6 bg-gray-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-electric-blue"></div>
+                                </label>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h4 class="font-semibold">Notifications système</h4>
+                                    <p class="text-sm text-gray-400">Activer les notifications système</p>
+                                </div>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" class="sr-only peer" checked>
+                                    <div class="w-11 h-6 bg-gray-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-electric-blue"></div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-card-blue rounded-xl p-6 border border-gray-700">
+                        <h3 class="text-xl font-semibold mb-6">Sécurité</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h4 class="font-semibold">Authentification à deux facteurs</h4>
+                                    <p class="text-sm text-gray-400">Activer l'authentification à deux facteurs</p>
+                                </div>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" class="sr-only peer">
+                                    <div class="w-11 h-6 bg-gray-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-electric-blue"></div>
+                                </label>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h4 class="font-semibold">Session timeout</h4>
+                                    <p class="text-sm text-gray-400">Déconnexion automatique après inactivité</p>
+                                </div>
+                                <select class="bg-deep-blue text-white rounded-lg px-4 py-2 border border-gray-700">
+                                    <option>15 minutes</option>
+                                    <option>30 minutes</option>
+                                    <option>1 heure</option>
+                                    <option>4 heures</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-card-blue rounded-xl p-6 border border-gray-700">
+                        <h3 class="text-xl font-semibold mb-6">Langue et région</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h4 class="font-semibold">Langue</h4>
+                                    <p class="text-sm text-gray-400">Sélectionner la langue du système</p>
+                                </div>
+                                <select class="bg-deep-blue text-white rounded-lg px-4 py-2 border border-gray-700">
+                                    <option>Français</option>
+                                    <option>English</option>
+                                    <option>Español</option>
+                                </select>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h4 class="font-semibold">Format de date</h4>
+                                    <p class="text-sm text-gray-400">Sélectionner le format de date</p>
+                                </div>
+                                <select class="bg-deep-blue text-white rounded-lg px-4 py-2 border border-gray-700">
+                                    <option>DD/MM/YYYY</option>
+                                    <option>MM/DD/YYYY</option>
+                                    <option>YYYY-MM-DD</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                    </div>
+
+                    <!-- User Management Section -->
+                    <div data-section="users" class="space-y-6 hidden">
+                        <div class="bg-card-blue rounded-xl p-6 border border-gray-700">
+                            <div class="flex justify-between items-center mb-6">
+                                <h3 class="text-xl font-semibold">Gestion des utilisateurs</h3>
+                                <button class="bg-electric-blue hover:bg-blue-600 text-white px-4 py-2 rounded-lg flex items-center space-x-2">
+                                    <i class="fas fa-plus"></i>
+                                    <span>Ajouter un utilisateur</span>
+                                </button>
+                            </div>
+                            <div class="overflow-x-auto">
+                                <table class="w-full">
+                                    <thead>
+                                        <tr class="text-left text-gray-400">
+                                            <th class="pb-4">Utilisateur</th>
+                                            <th class="pb-4">Rôle</th>
+                                            <th class="pb-4">Statut</th>
+                                            <th class="pb-4">Dernière connexion</th>
+                                            <th class="pb-4">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-gray-300">
+                                        <tr class="border-b border-gray-700">
+                                            <td class="py-4">
+                                                <div class="flex items-center">
+                                                    <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-3">
+                                                        <span class="font-semibold">ML</span>
+                                                    </div>
+                                                    <span>Marie Lambert</span>
+                                                </div>
+                                            </td>
+                                            <td>Administrateur</td>
+                                            <td><span class="px-2 py-1 bg-green-500 bg-opacity-20 text-green-400 rounded">Actif</span></td>
+                                            <td>Il y a 2 heures</td>
+                                            <td>
+                                                <button class="text-electric-blue hover:text-blue-400 mr-2">
+                                                    <i class="fas fa-edit"></i>
+                                                </button>
+                                                <button class="text-red-400 hover:text-red-500">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AI Configuration Section -->
+                    <div data-section="ai" class="space-y-6 hidden">
+                        <div class="bg-card-blue rounded-xl p-6 border border-gray-700">
+                            <h3 class="text-xl font-semibold mb-6">Configuration IA</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <h4 class="font-semibold">Assistant IA</h4>
+                                        <p class="text-sm text-gray-400">Activer l'assistant IA pour tous les utilisateurs</p>
+                                    </div>
+                                    <label class="relative inline-flex items-center cursor-pointer">
+                                        <input type="checkbox" class="sr-only peer" checked>
+                                        <div class="w-11 h-6 bg-gray-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-electric-blue"></div>
+                                    </label>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <h4 class="font-semibold">Analyse prédictive</h4>
+                                        <p class="text-sm text-gray-400">Activer les prédictions de vente</p>
+                                    </div>
+                                    <label class="relative inline-flex items-center cursor-pointer">
+                                        <input type="checkbox" class="sr-only peer" checked>
+                                        <div class="w-11 h-6 bg-gray-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-electric-blue"></div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- System Logs Section -->
+                    <div data-section="logs" class="space-y-6 hidden">
+                        <div class="bg-card-blue rounded-xl p-6 border border-gray-700">
+                            <h3 class="text-xl font-semibold mb-6">Journaux système</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-center justify-between p-4 bg-deep-blue rounded-lg border border-gray-700">
+                                    <div>
+                                        <h4 class="font-semibold">Mise à jour système</h4>
+                                        <p class="text-sm text-gray-400">11 avril 2024, 09:30</p>
+                                    </div>
+                                    <i class="fas fa-check-circle text-green-400"></i>
+                                </div>
+                                <div class="flex items-center justify-between p-4 bg-deep-blue rounded-lg border border-gray-700">
+                                    <div>
+                                        <h4 class="font-semibold">Sauvegarde automatique</h4>
+                                        <p class="text-sm text-gray-400">11 avril 2024, 08:00</p>
+                                    </div>
+                                    <i class="fas fa-check-circle text-green-400"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Import/Export Section -->
+                    <div data-section="import" class="space-y-6 hidden">
+                        <div class="bg-card-blue rounded-xl p-6 border border-gray-700">
+                            <h3 class="text-xl font-semibold mb-6">Import/Export de données</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-center justify-between p-4 bg-deep-blue rounded-lg border border-gray-700">
+                                    <div>
+                                        <h4 class="font-semibold">Import/Export</h4>
+                                        <p class="text-sm text-gray-400">Gérer les données du système</p>
+                                    </div>
+                                    <div class="flex space-x-2">
+                                        <button class="bg-electric-blue hover:bg-blue-600 text-white px-3 py-1 rounded">
+                                            Import
+                                        </button>
+                                        <button class="bg-electric-blue hover:bg-blue-600 text-white px-3 py-1 rounded">
+                                            Export
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between p-4 bg-deep-blue rounded-lg border border-gray-700">
+                                    <div>
+                                        <h4 class="font-semibold">Sauvegarde</h4>
+                                        <p class="text-sm text-gray-400">Dernière sauvegarde: Il y a 2 heures</p>
+                                    </div>
+                                    <button class="bg-electric-blue hover:bg-blue-600 text-white px-3 py-1 rounded">
+                                        Sauvegarder
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- AI Assistant Button -->
+    <button class="ai-assistant-btn fixed bottom-6 right-6 bg-light-purple hover:bg-purple-600 text-white rounded-full p-4 shadow-lg flex items-center justify-center">
+        <i class="fas fa-robot text-2xl"></i>
+    </button>
+</body>
+</html>
