@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car mAIstro - Nouveau Client</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'deep-blue': '#0A192F',
+                        'card-blue': '#1E2A45',
+                        'electric-blue': '#60A5FA',
+                        'light-purple': '#8B5CF6',
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-deep-blue font-inter text-gray-100">
+    <div class="flex h-screen">
+        <!-- Sidebar Navigation -->
+        <nav class="w-64 bg-deep-blue border-r border-gray-700 flex flex-col">
+            <!-- Logo -->
+            <div class="p-6 border-b border-gray-700">
+                <a href="dashboard.html" class="text-2xl font-bold text-white">Car<span class="text-electric-blue">mAIstro</span></a>
+            </div>
+
+            <!-- Navigation Links -->
+            <div class="flex-1 overflow-y-auto py-4 space-y-1">
+                <!-- Same navigation as other pages -->
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="flex-1 overflow-x-hidden overflow-y-auto bg-deep-blue">
+            <!-- Top Bar -->
+            <div class="bg-deep-blue border-b border-gray-700 p-4 flex items-center justify-between sticky top-0 z-10">
+                <div class="flex items-center space-x-4">
+                    <a href="javascript:history.back()" class="text-gray-400 hover:text-white">
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                    <h2 class="text-xl text-white font-semibold">Nouveau Client</h2>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <button type="submit" form="clientForm" class="bg-electric-blue hover:bg-blue-600 text-white px-4 py-2 rounded-lg flex items-center space-x-2">
+                        <i class="fas fa-save"></i>
+                        <span>Sauvegarder</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Form Content -->
+            <div class="p-6 space-y-6">
+                <!-- Client Information -->
+                <div class="bg-card-blue rounded-xl p-6 border border-gray-700">
+                    <h3 class="text-xl font-semibold mb-6">Informations du client</h3>
+                <form id="clientForm">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-2">Prénom</label>
+                            <input type="text" name="prenom" required class="w-full bg-deep-blue text-white rounded-lg px-4 py-2 border border-gray-700">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-2">Nom</label>
+                            <input type="text" name="nom" required class="w-full bg-deep-blue text-white rounded-lg px-4 py-2 border border-gray-700">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-2">Téléphone</label>
+                            <input type="tel" name="telephone" required class="w-full bg-deep-blue text-white rounded-lg px-4 py-2 border border-gray-700">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-2">Email</label>
+                            <input type="email" name="email" class="w-full bg-deep-blue text-white rounded-lg px-4 py-2 border border-gray-700">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-2">Source</label>
+                            <select name="source" class="w-full bg-deep-blue text-white rounded-lg px-4 py-2 border border-gray-700">
+                                <option value="walk-in">Walk-in</option>
+                                <option value="phone-up">Phone-up</option>
+                                <option value="site-web">Site web</option>
+                                <option value="reference">Référence</option>
+                                <option value="reseaux-sociaux">Réseaux sociaux</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-2">Note client</label>
+                            <div class="rating-container flex items-center space-x-1">
+                                <button type="button" class="star-rating text-2xl text-gray-600 hover:text-yellow-300" data-rating="1">
+                                    <i class="fas fa-star"></i>
+                                </button>
+                                <button type="button" class="star-rating text-2xl text-gray-600 hover:text-yellow-300" data-rating="2">
+                                    <i class="fas fa-star"></i>
+                                </button>
+                                <button type="button" class="star-rating text-2xl text-gray-600 hover:text-yellow-300" data-rating="3">
+                                    <i class="fas fa-star"></i>
+                                </button>
+                                <button type="button" class="star-rating text-2xl text-gray-600 hover:text-yellow-300" data-rating="4">
+                                    <i class="fas fa-star"></i>
+                                </button>
+                                <button type="button" class="star-rating text-2xl text-gray-600 hover:text-yellow-300" data-rating="5">
+                                    <i class="fas fa-star"></i>
+                                </button>
+                                <input type="hidden" name="rating" id="rating-value" value="0">
+                            </div>
+                        </div>
+                        <!-- Véhicule recherché -->
+                        <div class="col-span-full">
+                            <h3 class="text-xl font-semibold mb-6">Véhicule recherché</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-2">Marque</label>
+                            <input type="text" name="vehicule_marque" class="w-full bg-deep-blue text-white rounded-lg px-4 py-2 border border-gray-700">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-2">Modèle</label>
+                            <input type="text" name="vehicule_modele" class="w-full bg-deep-blue text-white rounded-lg px-4 py-2 border border-gray-700">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-2">Année</label>
+                            <input type="number" name="vehicule_annee" min="1900" max="2025" class="w-full bg-deep-blue text-white rounded-lg px-4 py-2 border border-gray-700">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-2">Budget</label>
+                            <input type="number" name="vehicule_budget" min="0" step="1000" class="w-full bg-deep-blue text-white rounded-lg px-4 py-2 border border-gray-700">
+                        </div>
+                            </div>
+                        </div>
+
+                        <!-- Véhicule d'échange -->
+                        <div class="col-span-full">
+                            <h3 class="text-xl font-semibold mb-6">Véhicule d'échange</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-2">Marque</label>
+                            <input type="text" name="echange_marque" class="w-full bg-deep-blue text-white rounded-lg px-4 py-2 border border-gray-700">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-2">Modèle</label>
+                            <input type="text" name="echange_modele" class="w-full bg-deep-blue text-white rounded-lg px-4 py-2 border border-gray-700">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-2">Année</label>
+                            <input type="number" name="echange_annee" min="1900" max="2025" class="w-full bg-deep-blue text-white rounded-lg px-4 py-2 border border-gray-700">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-2">Kilométrage</label>
+                            <input type="number" name="echange_kilometrage" min="0" step="1000" class="w-full bg-deep-blue text-white rounded-lg px-4 py-2 border border-gray-700">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-2">NIV</label>
+                            <input type="text" name="echange_niv" pattern="[A-HJ-NPR-Z0-9]{17}" title="NIV valide de 17 caractères" class="w-full bg-deep-blue text-white rounded-lg px-4 py-2 border border-gray-700">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-2">Valeur estimée</label>
+                            <input type="number" name="echange_valeur" min="0" step="100" class="w-full bg-deep-blue text-white rounded-lg px-4 py-2 border border-gray-700">
+                        </div>
+                            </div>
+                        </div>
+
+                        <!-- Notes -->
+                        <div class="col-span-full">
+                            <h3 class="text-xl font-semibold mb-6">Notes</h3>
+                            <div class="space-y-4">
+                                <textarea name="notes" rows="4" class="w-full bg-deep-blue text-white rounded-lg px-4 py-2 border border-gray-700" 
+                                          placeholder="Ajoutez des notes concernant le client..."></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Historique des modifications -->
+                <div class="bg-card-blue rounded-xl p-6 border border-gray-700">
+                    <h3 class="text-xl font-semibold mb-6">Historique des modifications</h3>
+                    <div id="history-container" class="space-y-4">
+                        <div class="flex items-center justify-between p-4 bg-deep-blue rounded-lg border border-gray-700">
+                            <div>
+                                <h4 class="font-semibold">Création de la fiche client</h4>
+                                <p class="text-sm text-gray-400">11 avril 2024, 09:30 - Par Marie Lambert</p>
+                            </div>
+                            <i class="fas fa-plus-circle text-green-400"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- AI Assistant Button -->
+    <button class="ai-assistant-btn fixed bottom-6 right-6 bg-light-purple hover:bg-purple-600 text-white rounded-full p-4 shadow-lg flex items-center justify-center">
+        <i class="fas fa-robot text-2xl"></i>
+    </button>
+</body>
+</html>
