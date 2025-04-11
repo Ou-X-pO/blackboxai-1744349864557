@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car mAIstro - Profil utilisateur</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'deep-blue': '#0A192F',
+                        'card-blue': '#1E2A45',
+                        'electric-blue': '#60A5FA',
+                        'light-purple': '#8B5CF6',
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-deep-blue font-inter text-gray-100">
+    <div class="flex h-screen">
+        <!-- Sidebar Navigation -->
+        <nav class="w-64 bg-deep-blue border-r border-gray-700 flex flex-col">
+            <!-- Logo -->
+            <div class="p-6 border-b border-gray-700">
+                <a href="dashboard.html" class="text-2xl font-bold text-white">Car<span class="text-electric-blue">mAIstro</span></a>
+            </div>
+
+            <!-- Navigation Links -->
+            <div class="flex-1 overflow-y-auto py-4 space-y-1">
+                <a href="dashboard.html" class="flex items-center px-6 py-3 text-gray-300 hover:bg-gray-800 hover:bg-opacity-50 rounded-lg mx-2">
+                    <i class="fas fa-chart-line w-5"></i>
+                    <span class="ml-3">Tableau de bord</span>
+                </a>
+
+                <!-- Vente -->
+                <div class="nav-item relative px-2">
+                    <button class="flex items-center w-full px-6 py-3 text-gray-300 hover:bg-gray-800 hover:bg-opacity-50 rounded-lg">
+                        <i class="fas fa-dollar-sign w-5"></i>
+                        <span class="ml-3">Vente</span>
+                        <i class="fas fa-chevron-down ml-auto"></i>
+                    </button>
+                    <div class="nav-dropdown absolute left-0 w-full bg-card-blue border border-gray-700 rounded-lg py-2 mt-1 shadow-lg">
+                        <a href="walk-in.html" class="block px-6 py-2 text-sm text-gray-300 hover:bg-gray-700">Walk-in</a>
+                        <a href="phone-up.html" class="block px-6 py-2 text-sm text-gray-300 hover:bg-gray-700">Phone up</a>
+                        <a href="renouvellement.html" class="block px-6 py-2 text-sm text-gray-300 hover:bg-gray-700">Renouvellement</a>
+                        <a href="utext.html" class="block px-6 py-2 text-sm text-gray-300 hover:bg-gray-700">Utext</a>
+                    </div>
+                </div>
+
+                <!-- Outils -->
+                <div class="nav-item relative px-2">
+                    <button class="flex items-center w-full px-6 py-3 text-gray-300 hover:bg-gray-800 hover:bg-opacity-50 rounded-lg">
+                        <i class="fas fa-tools w-5"></i>
+                        <span class="ml-3">Outils</span>
+                        <i class="fas fa-chevron-down ml-auto"></i>
+                    </button>
+                    <div class="nav-dropdown absolute left-0 w-full bg-card-blue border border-gray-700 rounded-lg py-2 mt-1 shadow-lg">
+                        <a href="tour-de-role.html" class="block px-6 py-2 text-sm text-gray-300 hover:bg-gray-700">Tour de rôle</a>
+                        <a href="horaire.html" class="block px-6 py-2 text-sm text-gray-300 hover:bg-gray-700">Horaire</a>
+                        <a href="inventaire.html" class="block px-6 py-2 text-sm text-gray-300 hover:bg-gray-700">Inventaire</a>
+                    </div>
+                </div>
+
+                <!-- Analyse CRM -->
+                <div class="nav-item relative px-2">
+                    <button class="flex items-center w-full px-6 py-3 text-gray-300 hover:bg-gray-800 hover:bg-opacity-50 rounded-lg">
+                        <i class="fas fa-brain w-5"></i>
+                        <span class="ml-3">Analyse CRM</span>
+                        <i class="fas fa-chevron-down ml-auto"></i>
+                    </button>
+                    <div class="nav-dropdown absolute left-0 w-full bg-card-blue border border-gray-700 rounded-lg py-2 mt-1 shadow-lg">
+                        <a href="rapport-ia.html" class="block px-6 py-2 text-sm text-gray-300 hover:bg-gray-700">Rapport IA</a>
+                        <a href="exa-analyse.html" class="block px-6 py-2 text-sm text-gray-300 hover:bg-gray-700">Exa Analyse</a>
+                    </div>
+                </div>
+
+                <a href="tableau-ventes.html" class="flex items-center px-6 py-3 text-gray-300 hover:bg-gray-800 hover:bg-opacity-50 rounded-lg mx-2">
+                    <i class="fas fa-chart-bar w-5"></i>
+                    <span class="ml-3">Tableau des ventes</span>
+                </a>
+            </div>
+
+            <!-- Settings -->
+            <div class="border-t border-gray-700 p-4">
+                <a href="profil.html" class="flex items-center w-full px-6 py-3 text-white bg-gray-800 bg-opacity-50 rounded-lg">
+                    <i class="fas fa-user w-5"></i>
+                    <span class="ml-3">Profil</span>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="flex-1 overflow-x-hidden overflow-y-auto bg-deep-blue">
+            <!-- Top Bar -->
+            <div class="bg-deep-blue border-b border-gray-700 p-4 flex items-center justify-between sticky top-0 z-10">
+                <h2 class="text-xl text-white font-semibold">Profil utilisateur</h2>
+                
+                <!-- Notifications -->
+                <div class="flex items-center space-x-4">
+                    <button class="text-gray-300 hover:text-white relative">
+                        <i class="fas fa-bell text-xl"></i>
+                        <span class="absolute -top-1 -right-1 bg-red-500 rounded-full w-4 h-4 text-xs flex items-center justify-center">2</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Profile Content -->
+            <div class="p-6 space-y-8">
+                <!-- Profile Header -->
+                <div class="flex items-center space-x-6">
+                    <div class="w-24 h-24 bg-electric-blue rounded-full flex items-center justify-center">
+                        <span class="text-3xl font-bold">ML</span>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold">Marie Lambert</h3>
+                        <p class="text-gray-400">Représentante - Véhicules neufs</p>
+                    </div>
+                </div>
+
+                <!-- Profile Sections -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <!-- Personal Information -->
+                    <div class="bg-card-blue rounded-xl p-6 border border-gray-700">
+                        <h3 class="text-xl font-semibold mb-6">Informations personnelles</h3>
+                        <form class="space-y-4">
+                            <div>
+                                <label class="block text-gray-400 mb-2">Nom complet</label>
+                                <input type="text" value="Marie Lambert" 
+                                       class="w-full bg-deep-blue text-white rounded-lg px-4 py-2 border border-gray-700">
+                            </div>
+                            <div>
+                                <label class="block text-gray-400 mb-2">Email</label>
+                                <input type="email" value="marie.lambert@carmastro.com" 
+                                       class="w-full bg-deep-blue text-white rounded-lg px-4 py-2 border border-gray-700">
+                            </div>
+                            <div>
+                                <label class="block text-gray-400 mb-2">Téléphone</label>
+                                <input type="tel" value="(514) 555-0123" 
+                                       class="w-full bg-deep-blue text-white rounded-lg px-4 py-2 border border-gray-700">
+                            </div>
+                            <button class="bg-electric-blue hover:bg-blue-600 text-white px-6 py-2 rounded-lg">
+                                Sauvegarder
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Password Change -->
+                    <div class="bg-card-blue rounded-xl p-6 border border-gray-700">
+                        <h3 class="text-xl font-semibold mb-6">Changer le mot de passe</h3>
+                        <form class="space-y-4">
+                            <div>
+                                <label class="block text-gray-400 mb-2">Mot de passe actuel</label>
+                                <input type="password" placeholder="••••••••" 
+                                       class="w-full bg-deep-blue text-white rounded-lg px-4 py-2 border border-gray-700">
+                            </div>
+                            <div>
+                                <label class="block text-gray-400 mb-2">Nouveau mot de passe</label>
+                                <input type="password" placeholder="••••••••" 
+                                       class="w-full bg-deep-blue text-white rounded-lg px-4 py-2 border border-gray-700">
+                            </div>
+                            <div>
+                                <label class="block text-gray-400 mb-2">Confirmer le mot de passe</label>
+                                <input type="password" placeholder="••••••••" 
+                                       class="w-full bg-deep-blue text-white rounded-lg px-4 py-2 border border-gray-700">
+                            </div>
+                            <button class="bg-electric-blue hover:bg-blue-600 text-white px-6 py-2 rounded-lg">
+                                Mettre à jour
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Notification Preferences -->
+                    <div class="bg-card-blue rounded-xl p-6 border border-gray-700">
+                        <h3 class="text-xl font-semibold mb-6">Préférences de notification</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h4 class="font-semibold">Notifications email</h4>
+                                    <p class="text-sm text-gray-400">Recevoir des notifications par email</p>
+                                </div>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" class="sr-only peer" checked>
+                                    <div class="w-11 h-6 bg-gray-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-electric-blue"></div>
+                                </label>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h4 class="font-semibold">Notifications push</h4>
+                                    <p class="text-sm text-gray-400">Recevoir des notifications push</p>
+                                </div>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" class="sr-only peer" checked>
+                                    <div class="w-11 h-6 bg-gray-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-electric-blue"></div>
+                                </label>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h4 class="font-semibold">Notifications SMS</h4>
+                                    <p class="text-sm text-gray-400">Recevoir des notifications SMS</p>
+                                </div>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" class="sr-only peer">
+                                    <div class="w-11 h-6 bg-gray-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-electric-blue"></div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Activity Log -->
+                    <div class="bg-card-blue rounded-xl p-6 border border-gray-700">
+                        <h3 class="text-xl font-semibold mb-6">Journal d'activité</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between p-4 bg-deep-blue rounded-lg border border-gray-700">
+                                <div>
+                                    <h4 class="font-semibold">Connexion réussie</h4>
+                                    <p class="text-sm text-gray-400">11 avril 2024, 09:30</p>
+                                </div>
+                                <i class="fas fa-sign-in-alt text-green-400"></i>
+                            </div>
+                            <div class="flex items-center justify-between p-4 bg-deep-blue rounded-lg border border-gray-700">
+                                <div>
+                                    <h4 class="font-semibold">Mot de passe modifié</h4>
+                                    <p class="text-sm text-gray-400">10 avril 2024, 14:15</p>
+                                </div>
+                                <i class="fas fa-key text-yellow-400"></i>
+                            </div>
+                            <div class="flex items-center justify-between p-4 bg-deep-blue rounded-lg border border-gray-700">
+                                <div>
+                                    <h4 class="font-semibold">Profil mis à jour</h4>
+                                    <p class="text-sm text-gray-400">10 avril 2024, 11:20</p>
+                                </div>
+                                <i class="fas fa-user-edit text-blue-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- AI Assistant Button -->
+    <button class="ai-assistant-btn fixed bottom-6 right-6 bg-light-purple hover:bg-purple-600 text-white rounded-full p-4 shadow-lg flex items-center justify-center">
+        <i class="fas fa-robot text-2xl"></i>
+    </button>
+</body>
+</html>
