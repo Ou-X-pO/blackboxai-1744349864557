@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car mAIstro - Rapport IA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'deep-blue': '#0A192F',
+                        'card-blue': '#1E2A45',
+                        'electric-blue': '#60A5FA',
+                        'light-purple': '#8B5CF6',
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-deep-blue font-inter text-gray-100">
+    <div class="flex h-screen">
+        <!-- Sidebar Navigation -->
+        <nav class="w-64 bg-deep-blue border-r border-gray-700 flex flex-col">
+            <!-- Logo -->
+            <div class="p-6 border-b border-gray-700">
+                <h1 class="text-2xl font-bold text-white">Car<span class="text-electric-blue">mAIstro</span></h1>
+            </div>
+
+            <!-- Navigation Links -->
+            <div class="flex-1 overflow-y-auto py-4 space-y-1">
+                <a href="dashboard.html" class="flex items-center px-6 py-3 text-gray-300 hover:bg-gray-800 hover:bg-opacity-50 rounded-lg mx-2">
+                    <i class="fas fa-chart-line w-5"></i>
+                    <span class="ml-3">Tableau de bord</span>
+                </a>
+
+                <!-- Vente -->
+                <div class="nav-item relative px-2">
+                    <button class="flex items-center w-full px-6 py-3 text-gray-300 hover:bg-gray-800 hover:bg-opacity-50 rounded-lg">
+                        <i class="fas fa-dollar-sign w-5"></i>
+                        <span class="ml-3">Vente</span>
+                        <i class="fas fa-chevron-down ml-auto"></i>
+                    </button>
+                    <div class="nav-dropdown absolute left-0 w-full bg-card-blue border border-gray-700 rounded-lg py-2 mt-1 shadow-lg">
+                        <a href="walk-in.html" class="block px-6 py-2 text-sm text-gray-300 hover:bg-gray-700">Walk-in</a>
+                        <a href="phone-up.html" class="block px-6 py-2 text-sm text-gray-300 hover:bg-gray-700">Phone up</a>
+                        <a href="renouvellement.html" class="block px-6 py-2 text-sm text-gray-300 hover:bg-gray-700">Renouvellement</a>
+                        <a href="utext.html" class="block px-6 py-2 text-sm text-gray-300 hover:bg-gray-700">Utext</a>
+                    </div>
+                </div>
+
+                <!-- Other navigation items -->
+                <!-- ... (same as in dashboard.html) ... -->
+            </div>
+
+            <!-- Settings -->
+            <div class="border-t border-gray-700 p-4">
+                <button class="flex items-center w-full px-6 py-3 text-gray-300 hover:bg-gray-800 hover:bg-opacity-50 rounded-lg">
+                    <i class="fas fa-cog w-5"></i>
+                    <span class="ml-3">Paramètres</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="flex-1 overflow-x-hidden overflow-y-auto bg-deep-blue">
+            <!-- Top Bar -->
+            <div class="bg-deep-blue border-b border-gray-700 p-4 flex items-center justify-between sticky top-0 z-10">
+                <h2 class="text-xl text-white font-semibold">Rapport IA</h2>
+                <div class="flex items-center space-x-4">
+                    <select class="bg-card-blue text-white rounded-lg px-4 py-2 border border-gray-700">
+                        <option>Ce mois</option>
+                        <option>Cette semaine</option>
+                        <option>Cette année</option>
+                    </select>
+                    <button class="text-gray-300 hover:text-white relative">
+                        <i class="fas fa-bell text-xl"></i>
+                        <span class="absolute -top-1 -right-1 bg-red-500 rounded-full w-4 h-4 text-xs flex items-center justify-center">3</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Dashboard Content -->
+            <div class="p-6 space-y-6">
+                <!-- KPI Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Conversations -->
+                    <div class="kpi-card bg-card-blue rounded-xl p-6 border border-gray-700">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="text-gray-400">
+                                <i class="fas fa-comments text-electric-blue"></i>
+                                <span class="ml-2">Conversations</span>
+                            </div>
+                            <span class="text-green-400">+12.5%</span>
+                        </div>
+                        <div class="text-3xl font-bold text-white">1,234</div>
+                    </div>
+
+                    <!-- Temps moyen -->
+                    <div class="kpi-card bg-card-blue rounded-xl p-6 border border-gray-700">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="text-gray-400">
+                                <i class="fas fa-clock text-electric-blue"></i>
+                                <span class="ml-2">Temps moyen</span>
+                            </div>
+                            <span class="text-red-400">-8.3%</span>
+                        </div>
+                        <div class="text-3xl font-bold text-white">2m 34s</div>
+                    </div>
+
+                    <!-- Satisfaction -->
+                    <div class="kpi-card bg-card-blue rounded-xl p-6 border border-gray-700">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="text-gray-400">
+                                <i class="fas fa-smile text-electric-blue"></i>
+                                <span class="ml-2">Satisfaction</span>
+                            </div>
+                            <span class="text-green-400">+2.1%</span>
+                        </div>
+                        <div class="text-3xl font-bold text-white">94%</div>
+                    </div>
+
+                    <!-- Conversions -->
+                    <div class="kpi-card bg-card-blue rounded-xl p-6 border border-gray-700">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="text-gray-400">
+                                <i class="fas fa-chart-line text-electric-blue"></i>
+                                <span class="ml-2">Conversions</span>
+                            </div>
+                            <span class="text-green-400">+15.4%</span>
+                        </div>
+                        <div class="text-3xl font-bold text-white">384</div>
+                    </div>
+                </div>
+
+                <!-- Keywords and Objections -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <!-- Mots-clés Fréquents -->
+                    <div class="bg-card-blue rounded-xl p-6 border border-gray-700">
+                        <h3 class="text-xl font-semibold mb-6">Mots-clés Fréquents</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-center justify-between">
+                                <span>Prix</span>
+                                <div class="flex items-center">
+                                    <div class="h-2 bg-electric-blue rounded-full w-48"></div>
+                                    <span class="ml-3 text-gray-400">245</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span>Disponibilité</span>
+                                <div class="flex items-center">
+                                    <div class="h-2 bg-electric-blue rounded-full w-40"></div>
+                                    <span class="ml-3 text-gray-400">198</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span>Financement</span>
+                                <div class="flex items-center">
+                                    <div class="h-2 bg-electric-blue rounded-full w-32"></div>
+                                    <span class="ml-3 text-gray-400">156</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Objections Fréquentes -->
+                    <div class="bg-card-blue rounded-xl p-6 border border-gray-700">
+                        <h3 class="text-xl font-semibold mb-6">Objections Fréquentes</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-center justify-between">
+                                <span>Prix trop élevé</span>
+                                <div class="flex items-center">
+                                    <div class="h-2 bg-electric-blue rounded-full w-48"></div>
+                                    <span class="ml-3 text-gray-400">156</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span>Délai de livraison</span>
+                                <div class="flex items-center">
+                                    <div class="h-2 bg-electric-blue rounded-full w-40"></div>
+                                    <span class="ml-3 text-gray-400">124</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span>Besoin de réfléchir</span>
+                                <div class="flex items-center">
+                                    <div class="h-2 bg-electric-blue rounded-full w-32"></div>
+                                    <span class="ml-3 text-gray-400">98</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Performance par Représentant -->
+                <div class="bg-card-blue rounded-xl p-6 border border-gray-700">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-xl font-semibold">Performance par Représentant</h3>
+                        <div class="flex items-center space-x-4">
+                            <div class="flex items-center">
+                                <span class="w-6 h-6 bg-blue-500 rounded-md mr-2"></span>
+                                <span class="text-sm">Véhicule neuf</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-6 h-6 bg-green-500 rounded-md mr-2"></span>
+                                <span class="text-sm">Véhicule d'occasion</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-6 h-6 bg-purple-500 rounded-md mr-2"></span>
+                                <span class="text-sm">Démo</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sales Grid -->
+                    <div class="space-y-8">
+                        <!-- Bot BDC -->
+                        <div class="border-b border-gray-700 pb-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-robot text-2xl mr-3 text-electric-blue"></i>
+                                    <span>Bot BDC</span>
+                                </div>
+                                <span class="text-gray-400">40% taux de conversion</span>
+                            </div>
+                            <div class="performance-grid mb-3">
+                                <div class="performance-square bg-blue-500"></div>
+                                <div class="performance-square bg-blue-500"></div>
+                                <div class="performance-square bg-blue-500"></div>
+                                <div class="performance-square bg-green-500"></div>
+                                <div class="performance-square bg-green-500"></div>
+                                <div class="performance-square bg-blue-500"></div>
+                                <div class="performance-square bg-green-500"></div>
+                                <div class="performance-square bg-blue-500"></div>
+                                <div class="performance-square bg-blue-500"></div>
+                                <div class="performance-square bg-green-500"></div>
+                                <div class="performance-square bg-green-500"></div>
+                                <div class="performance-square bg-blue-500"></div>
+                            </div>
+                            <div class="flex justify-between text-sm text-gray-400">
+                                <span>98 ventes</span>
+                                <span>3 245 000,00 $</span>
+                            </div>
+                        </div>
+
+                        <!-- Marie Lambert -->
+                        <div class="border-b border-gray-700 pb-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-user text-2xl mr-3 text-electric-blue"></i>
+                                    <span>Marie Lambert</span>
+                                </div>
+                                <span class="text-gray-400">35% taux de conversion</span>
+                            </div>
+                            <div class="performance-grid mb-3">
+                                <div class="performance-square bg-blue-500"></div>
+                                <div class="performance-square bg-green-500"></div>
+                                <div class="performance-square bg-purple-500"></div>
+                                <div class="performance-square bg-blue-500"></div>
+                                <div class="performance-square bg-green-500"></div>
+                                <div class="performance-square bg-blue-500"></div>
+                            </div>
+                            <div class="flex justify-between text-sm text-gray-400">
+                                <span>24 ventes</span>
+                                <span>875 000,00 $</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- AI Assistant Button -->
+    <button class="ai-assistant-btn fixed bottom-6 right-6 bg-light-purple hover:bg-purple-600 text-white rounded-full p-4 shadow-lg flex items-center justify-center">
+        <i class="fas fa-robot text-2xl"></i>
+    </button>
+</body>
+</html>
